@@ -30,6 +30,9 @@ public class Main
 			for (int x=0; x<aliceImage.getWidth(); x++)
 			{
 				argb = getPixelArray(x, y);
+				//For each byte e.g. argb is 3 bytes (1 each for R,G,B) get the LSB.
+				// Form bytes out of the LSBs - for each byte convert the byte into a letter and print.
+				// The result should be a URL.
 				for (int i=0; i<argb.length; i++)
 				{
 					String bin = Integer.toBinaryString(argb[i]); 
@@ -59,6 +62,7 @@ public class Main
 		}
 	}
 	
+	//Get the pixel at the location (x,y)
 	private static int[] getPixelArray(int x, int y)
 	{
 		int rgb = aliceImage.getRGB(x, y);
